@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"roam_random",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"roam_random",
+  "parent":{
+    "name":"Skrypty",
+    "path":"folders/Skrypty.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
