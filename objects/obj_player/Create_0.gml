@@ -1,6 +1,9 @@
+h_speed = 0;
+v_speed = 0;
 walkSpeed = 4;
-lookcamera = noone;
+acceleration = 0.5;
+deceleration = 0.2;
 
-weapon_type = 0; // 0 means no weapon, 1 for melee, 2 for semi-auto gun, 3 for automatic gun, 4 for grenade
-weapon = noone; // Set the weapon to 'noone' by default
-ammo = 10; // Start with 10 ammo for ranged weapons (if applicable)
+weapon_type = 0;
+weapon = noone;
+ammo = 10;
