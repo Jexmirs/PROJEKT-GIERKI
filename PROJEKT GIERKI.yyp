@@ -40,6 +40,8 @@
   },
   "name":"PROJEKT GIERKI",
   "resources":[
+    {"id":{"name":"anicurve_Smooth","path":"animcurves/anicurve_Smooth/anicurve_Smooth.yy",},},
+    {"id":{"name":"anicurve_Wobble","path":"animcurves/anicurve_Wobble/anicurve_Wobble.yy",},},
     {"id":{"name":"Font_Menue","path":"fonts/Font_Menue/Font_Menue.yy",},},
     {"id":{"name":"obj_background_game","path":"objects/obj_background_game/obj_background_game.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
@@ -48,6 +50,7 @@
     {"id":{"name":"obj_cursor","path":"objects/obj_cursor/obj_cursor.yy",},},
     {"id":{"name":"obj_dialogue_system","path":"objects/obj_dialogue_system/obj_dialogue_system.yy",},},
     {"id":{"name":"obj_displaytext","path":"objects/obj_displaytext/obj_displaytext.yy",},},
+    {"id":{"name":"obj_dmgpoints","path":"objects/obj_dmgpoints/obj_dmgpoints.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_horizontaldoors","path":"objects/obj_horizontaldoors/obj_horizontaldoors.yy",},},
     {"id":{"name":"obj_mask_selector","path":"objects/obj_mask_selector/obj_mask_selector.yy",},},

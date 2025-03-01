@@ -1,5 +1,3 @@
-
-
 if (canTouchThis == true) {
 	canTouchThis = false;
 	
