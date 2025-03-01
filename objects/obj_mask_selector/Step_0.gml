@@ -9,7 +9,7 @@ if (keyboard_check_pressed(vk_down)) {
 if (keyboard_check_pressed(vk_enter)) {
     selected_mask = current_mask;
     
-    var player = instance_find(obj_player, 0);
+    var player = instance_find(obj_Player, 0);
     if (player != noone) {
         player.mask = selected_mask;
     }

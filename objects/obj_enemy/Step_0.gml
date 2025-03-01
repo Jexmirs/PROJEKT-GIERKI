@@ -8,7 +8,7 @@ if (!variable_global_exists("chasing_team")) {
 }
 
 function can_see_player() {
-    var distance_to_player = point_distance(x, y, obj_player.x, obj_player.y);
+    var distance_to_player = point_distance(x, y, obj_Player.x, obj_Player.y);
     if (distance_to_player > vision_range) {
         return false;
     }
@@ -16,8 +16,8 @@ function can_see_player() {
     var buffer_distance = 10;
     var start_x = x + lengthdir_x(buffer_distance, direction);
     var start_y = y + lengthdir_y(buffer_distance, direction);
-    var end_x = obj_player.x + lengthdir_x(buffer_distance, point_direction(obj_player.x, obj_player.y, x, y));
-    var end_y = obj_player.y + lengthdir_y(buffer_distance, point_direction(obj_player.x, obj_player.y, x, y));
+    var end_x = obj_Player.x + lengthdir_x(buffer_distance, point_direction(obj_Player.x, obj_Player.y, x, y));
+    var end_y = obj_Player.y + lengthdir_y(buffer_distance, point_direction(obj_Player.x, obj_Player.y, x, y));
     
     return !collision_line(start_x, start_y, end_x, end_y, obj_wall, false, false);
 }
@@ -43,21 +43,21 @@ switch (state) {
 
     case AIState.CHASING:
         if (can_see_player()) {
-            var distance_to_player = point_distance(x, y, obj_player.x, obj_player.y);
+            var distance_to_player = point_distance(x, y, obj_Player.x, obj_Player.y);
             speed_current = (distance_to_player < 100) ? speed_chase * 1.5 : speed_chase;
 
             apply_separation();
 
             if (distance_to_player < 50) {
                 speed_current = speed_chase * 0.75;
-                var target_angle = point_direction(x, y, obj_player.x, obj_player.y);
+                var target_angle = point_direction(x, y, obj_Player.x, obj_Player.y);
                 var random_offset = irandom_range(-10, 10);
-                move_towards_point(obj_player.x + lengthdir_x(random_offset, target_angle), 
-                                   obj_player.y + lengthdir_y(random_offset, target_angle), speed_current);
+                move_towards_point(obj_Player.x + lengthdir_x(random_offset, target_angle), 
+                                   obj_Player.y + lengthdir_y(random_offset, target_angle), speed_current);
             } else {
                 var erratic_offset = irandom_range(-5, 5);
-                var target_x = obj_player.x + erratic_offset;
-                var target_y = obj_player.y + irandom_range(-5, 5);
+                var target_x = obj_Player.x + erratic_offset;
+                var target_y = obj_Player.y + irandom_range(-5, 5);
                 move_towards_point(target_x, target_y, speed_current);
             }
         } else {
@@ -126,8 +126,8 @@ function join_chase() {
 }
 
 function chase_player() {
-    var target_x = obj_player.x;
-    var target_y = obj_player.y;
+    var target_x = obj_Player.x;
+    var target_y = obj_Player.y;
 
     if (mp_grid_path(global.grid, path, x, y, target_x, target_y, false)) {
         path_start(path, speed_current, path_action_stop, false);

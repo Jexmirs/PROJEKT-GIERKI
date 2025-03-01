@@ -4,9 +4,13 @@ walkSpeed = 4;
 acceleration = 0.5;
 deceleration = 0.2;
 
-weapon_type = 0;
-weapon = noone;
-ammo = 10;
+weapon_type = "pistol"; // Startowa broń
+fire_rate = 15;
+fire_timer = 0;
+has_melee = false;
+has_grenade = false;
+has_shotgun = false;
+has_rifle = false;
 
 masks = ["adrenalina", "morfina", "cos"];
 current_mask = 0;

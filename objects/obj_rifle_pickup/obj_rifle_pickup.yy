@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Camera",
+  "%Name":"obj_rifle_pickup",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Camera",
+  "name":"obj_rifle_pickup",
   "overriddenProperties":[],
   "parent":{
     "name":"Obiekty",
@@ -30,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"weapon_debug_sprite",
+    "path":"sprites/weapon_debug_sprite/weapon_debug_sprite.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

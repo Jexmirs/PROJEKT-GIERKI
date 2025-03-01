@@ -1,5 +1,3 @@
-xspd = lengthdir_x(spd, dir);
-yspd = lengthdir_y(spd, dir);
-
-x += yspd
-y += xspd
+if (place_meeting(x, y, obj_wall)) { // Jeśli pocisk uderzy w ścianę
+    instance_destroy(); // Usuń pocisk
+}
