@@ -1,2 +1,2 @@
-draw_sprite(spr_cursor, 0, x, y);
+draw_sprite(spr_cursor, image_index, x, y);
 depth = -1000;

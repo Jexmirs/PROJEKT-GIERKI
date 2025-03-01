@@ -34,6 +34,12 @@ var portrait_y = rectangle_y + (rectangle_height - portrait_height) / 2;
 
 draw_sprite(portrait_image, 0, portrait_x + swing_offset, portrait_y);
 
+draw_set_halign(fa_left);
+draw_set_valign(fa_top); 
+
+var skip_text_x = 20;
+var dialog_text_x = 20;
+
 draw_set_color(c_black);
 draw_text(dialog_text_x - 1, dialog_text_y - 1, global.dialog_text);
 draw_text(dialog_text_x + 1, dialog_text_y - 1, global.dialog_text);
