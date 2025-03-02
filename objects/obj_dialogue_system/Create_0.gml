@@ -9,7 +9,7 @@ portrait_width = 150;
 portrait_height = 150;
 
 
-portrait_image = ai_debug_sprite;
+portrait_image = sprBiker;
 
 swing_amplitude = 5;
 swing_speed = 0.05;  

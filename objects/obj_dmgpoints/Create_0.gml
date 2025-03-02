@@ -1,6 +1,6 @@
 text = "+" + string(400) + "PTS"; // text to be displayed
 
-
+global.score = 0;
 // move up and rotate
 moveY = 0.1;
 

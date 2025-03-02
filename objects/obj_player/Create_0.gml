@@ -1,10 +1,10 @@
 h_speed = 0;
 v_speed = 0;
-walkSpeed = 4;
+walkSpeed = 2;
 acceleration = 0.5;
 deceleration = 0.2;
 
-weapon_type = "pistol"; // Startowa broń
+weapon_type = "rifle";
 fire_rate = 15;
 fire_timer = 0;
 has_melee = false;

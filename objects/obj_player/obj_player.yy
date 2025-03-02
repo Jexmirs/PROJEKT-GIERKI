@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"player_debug_sprite",
-    "path":"sprites/player_debug_sprite/player_debug_sprite.yy",
+    "name":"sprPWalkUzi",
+    "path":"sprites/sprPWalkUzi/sprPWalkUzi.yy",
   },
   "spriteMaskId":null,
   "visible":true,
