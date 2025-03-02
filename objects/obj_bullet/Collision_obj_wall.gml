@@ -1,1 +1,1 @@
-instance_destroy(); // Destroy bullet on impact
+instance_destroy();
