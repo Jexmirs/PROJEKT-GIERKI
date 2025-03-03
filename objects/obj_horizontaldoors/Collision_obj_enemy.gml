@@ -28,7 +28,7 @@ var doorYY = y + lengthdir_y(12, image_angle);
 			if (normalisedAngle > 90  and normalisedAngle <=  180)  { doorSpeed =   doorSpeedStart; }	
 			
 			if (normalisedAngle > 180  and normalisedAngle <=  270) { doorSpeed =  doorSpeedStart;  }			
-			if (normalisedAngle > 270  and normalisedAngle <   360) { doorSpeed = -doorSpeedStart;  }				
+			if (normalisedAngle > 270  and normalisedAngle <   360) { doorSpeed = -doorSpeedStart;  }
 		}
 
 

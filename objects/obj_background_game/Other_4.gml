@@ -1,1 +1,1 @@
-audio_play_sound(Suicide, 1, true);
+audio_play_sound(Crystals, 1, true);
