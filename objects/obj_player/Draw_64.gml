@@ -21,9 +21,9 @@ if (current_weapon != "none") {
     var text_1 = string(ammo_rifle);
     draw_set_font(Font_Menue);
     draw_set_color(c_red);
-    draw_text_transformed(_xx + 20, _yy + 30, text_1, 2, 2, 0);
+    draw_text_transformed(_xx + 20, _yy + 50, text_1, 3, 3, 0);
     
     draw_set_color(color_start);
     draw_set_font(Font_Menue);
-    draw_text_transformed(_xx + 20, _yy + 30 + 2, text_1, 2, 2, 0);
+    draw_text_transformed(_xx + 20, _yy + 50 + 2, text_1, 3, 3, 0);
 }
