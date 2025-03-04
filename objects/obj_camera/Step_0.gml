@@ -25,7 +25,6 @@ if (instance_exists(target)) {
 
 var middlePointX = room_width/2;
 
-   // get 0-100%
     perc  = point_distance(obj_Player.x, obj_Player.y, middlePointX, obj_Player.y ) / middlePointX;
    var flip = 1;
    if (obj_Player.x > middlePointX ) {  flip = -1; }
