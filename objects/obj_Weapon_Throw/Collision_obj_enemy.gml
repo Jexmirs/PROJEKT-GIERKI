@@ -1,3 +1,4 @@
+
 if (collision_point(x, y, obj_enemy, false, true)) {
     with (other) {
         instance_create_layer(x, y, "Instances", obj_enemy_dead);  // Tworzymy obj_enemy_dead w miejscu obj_enemy

@@ -21,5 +21,3 @@ has_rifle = true;
 masks = ["adrenalina", "morfina", "cos"];
 current_mask = 0;
 mask = 0;
-
-show_debug_message("Create Event - current_weapon: " + string(current_weapon));

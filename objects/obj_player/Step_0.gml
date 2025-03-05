@@ -1,7 +1,5 @@
-// Obracanie postaci w stronę myszki
 image_angle = point_direction(x, y, mouse_x, mouse_y);
 
-// Ruch gracza
 var left  = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));
 var up    = keyboard_check(ord("W"));
@@ -21,7 +19,6 @@ if (!place_meeting(x, y + result_v, obj_Wall)) {
     y += verticalSpeed * walkSpeed;
 }
 
-// Przełączanie masek postaci
 if (keyboard_check_pressed(vk_left)) {
     current_mask = (current_mask - 1 + array_length(masks)) mod array_length(masks);
 }
@@ -35,7 +32,6 @@ switch (masks[current_mask]) {
     case "Don Juan": break;
 }
 
-// Kamera podąża za graczem
 var camSpeed = 0.1;
 var targetX = obj_Player.x - (display_get_width() / 2);
 var targetY = obj_Player.y - (display_get_height() / 2);
@@ -46,14 +42,12 @@ view_yview[0] = lerp(view_yview[0], targetY, camSpeed);
 view_xview[0] = clamp(view_xview[0], 0, room_width - display_get_width());
 view_yview[0] = clamp(view_yview[0], 0, room_height - display_get_height());
 
-// Strzelanie i broń
 if (!variable_global_exists("has_melee")) has_melee = false;
 if (!variable_global_exists("has_grenade")) has_grenade = false;
 if (!variable_global_exists("has_shotgun")) has_shotgun = false;
 if (!variable_global_exists("has_rifle")) has_rifle = false;
 
 
-// Obsługa celowania z kamerą SHIFT
 if (keyboard_check(vk_shift)) {
     if (!instance_exists(obj_TargetDummy)) {  
         targetDummy = instance_create_layer(mouse_x, mouse_y, "Instances", obj_TargetDummy);
@@ -69,7 +63,6 @@ if (keyboard_check(vk_shift)) {
     obj_TargetDummy.timer = 5;
 }
 
-// Animacja biegania
 if (horizontalSpeed != 0 || verticalSpeed != 0) {
     image_speed = 1;
 } else {
@@ -90,7 +83,6 @@ if (mouse_check_button(mb_left) && fire_timer == 0 && current_weapon != "none") 
     shoot();
 }
 
-// Strzelanie działa tylko, jeśli gracz ma broń i minął czas od ostatniego strzału
 function shoot() {
     if (current_weapon == "none") {
         show_debug_message("Brak broni - nie można strzelać.");
@@ -148,8 +140,101 @@ if(mouse_check_button_released(mb_right)){
 	var throwWeapon = instance_create_layer(x,y, "Instances", obj_Weapon_Throw);
 	throwWeapon.direction = point_direction(x, y, mouse_x, mouse_y);
 	throwWeapon.speed = random_range(7, 10);
-	obj_Player.sprite_index = sprPWalkUnarmed2;
 	
-	current_weapon = "none";
+	switch(current_weapon) {
+		case "rifle":
+		throwWeapon.sprite_index = spr_uzi
+		break;
+		case "bat":
+		throwWeapon.sprite_index = sprBat
+		break;
+
+		}
 	}
+}
+
+if (mouse_check_button_pressed(mb_right) && sprite_index != sprPAttackPunch && current_weapon = "none") {
+    sprite_index = sprPAttackPunch;
+    image_index = 0;
+    image_speed = 1;
+    
+    var punch = instance_create_layer(x + lengthdir_x(20, image_angle), y + lengthdir_y(20, image_angle), "Instances", obj_Punch);
+    punch.direction = image_angle;
+    punch.image_angle = punch.direction;
+    punch.owner = id;
+    
+}
+
+with (obj_Punch) {
+    if (owner.sprite_index != sprPAttackPunch) {
+        instance_destroy();
+    }
+}
+
+function melee_attack() {
+    if (sprite_index != sprPAttackBat) {
+        sprite_index = sprPAttackBat;
+        image_index = 0;
+        image_speed = 1;
+        
+        var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
+        punch.direction = image_angle;
+        punch.image_angle = punch.direction;
+        punch.owner = id;
+        if (obj_Player.sprite_index == sprPWalkUnarmed2) {
+            obj_Player.sprite_index = sprPWalkBat;
+        }
+    }
+}
+
+function melee_weapon_attack() {
+    if (current_weapon == "bat") {
+        sprite_index = sprPAttackBat;
+        image_index = 0;
+        image_speed = 1;
+        
+        var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
+        swing.direction = image_angle;
+        swing.image_angle = swing.direction;
+        swing.owner = id;
+        if (obj_Player.sprite_index == sprPWalkUnarmed2) {
+            obj_Player.sprite_index = sprPWalkBat;
+        }
+    }
+}
+
+if (mouse_check_button_pressed(mb_left)) {
+    if (current_weapon == "bat") {
+        sprite_index = sprPAttackBat;
+        image_index = 0;
+        image_speed = 1;
+        
+        var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
+        swing.direction = image_angle;
+        swing.image_angle = swing.direction;
+        swing.owner = id;
+    }
+}
+
+if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBat) {
+    if (image_index >= image_number - 1) {
+        if (horizontalSpeed != 0 || verticalSpeed != 0) {
+            sprite_index = sprPWalkUnarmed2;
+        } else {
+            sprite_index = sprPWalkUnarmed2;
+        }
+        image_speed = 0;
+    } else {
+        image_speed = 1;
+    }
+}
+
+if(sprite_index == sprPWalkUnarmed2 && current_weapon = "bat") {
+	obj_Player.sprite_index = sprPWalkBat	
+}
+
+with (obj_Punch) {
+    if (owner.sprite_index != sprPAttackPunch && owner.sprite_index != sprPAttackBat) {
+        instance_destroy();
+    }
 }
