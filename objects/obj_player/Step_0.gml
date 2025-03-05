@@ -143,6 +143,7 @@ if(mouse_check_button_released(mb_right)){
 	var throwWeapon = instance_create_layer(x,y, "Instances", obj_Weapon_Throw);
 	throwWeapon.direction = point_direction(x, y, mouse_x, mouse_y);
 	throwWeapon.speed = random_range(7, 10);
+	audio_play_sound(Throw, 1, false);
 	
 	switch(current_weapon) {
 		case "rifle":
@@ -170,6 +171,7 @@ if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && cu
     punch.image_angle = punch.direction;
     punch.owner = id;
     punch.depth = -10;
+	audio_play_sound(Swing1, 1, false);
 }
 
 with (obj_Swing) {
@@ -193,6 +195,7 @@ function melee_attack() {
         swing.image_angle = swing.direction;
         swing.owner = id;
         swing.depth = -20;
+		audio_play_sound(Swing1, 1, false);
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
         }
@@ -214,7 +217,7 @@ function melee_weapon_attack() {
         swing.image_angle = swing.direction;
         swing.owner = id;
         swing.depth = -20;
-
+		audio_play_sound(Swing1, 1, false);
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
         }
@@ -226,7 +229,7 @@ if (mouse_check_button_pressed(mb_left)) {
     if (current_weapon == "bat") {
         sprite_index = sprPAttackBat;
         image_index = 0;
-        image_speed = 0.5;
+        image_speed = 0.3;
         
         var offset = 20;
         var swing_x = x + lengthdir_x(offset, image_angle);
@@ -237,7 +240,7 @@ if (mouse_check_button_pressed(mb_left)) {
         swing.image_angle = swing.direction;
         swing.owner = id;
         swing.depth = -20;
-
+		audio_play_sound(Swing1, 1, false);
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
     }
