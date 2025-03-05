@@ -1,4 +1,5 @@
 image_angle = point_direction(x, y, mouse_x, mouse_y);
+image_angle_ = direction;
 
 var left  = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));
@@ -64,9 +65,11 @@ if (keyboard_check(vk_shift)) {
 }
 
 if (horizontalSpeed != 0 || verticalSpeed != 0) {
-    image_speed = 1;
+    image_speed = 0.5;
+	walk_timer++
 } else {
     image_speed = 0;
+	walk_timer = 0;
 }
 
 if (fire_timer > 0) {
@@ -98,7 +101,7 @@ function shoot() {
                 show_debug_message("Strzał z pistoletu! Pozostała amunicja: " + string(ammo_pistol));
                 bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                 bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-                bullet.image_angle = bullet.direction;
+                bullet.image_angle_ = bullet.direction;
                 bullet.speed = 10;
                 fire_rate = 15;
             }
@@ -111,7 +114,7 @@ function shoot() {
                 for (var i = -10; i <= 10; i += 5) {
                     bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                     bullet.direction = point_direction(x, y, mouse_x, mouse_y) + i;
-                    bullet.image_angle = bullet.direction;
+                    bullet.image_angle_ = bullet.direction;
                     bullet.speed = 8;
                 }
                 fire_rate = 30;
@@ -124,7 +127,7 @@ function shoot() {
                 show_debug_message("Strzał z karabinu! Pozostała amunicja: " + string(ammo_rifle));
                 bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                 bullet.direction = point_direction(x, y, mouse_x, mouse_y);
-                bullet.image_angle = bullet.direction;
+                bullet.image_angle_ = bullet.direction;
                 bullet.speed = 12;
                 fire_rate = 5;
 				audio_play_sound(Uzi, 1, false);
@@ -158,9 +161,9 @@ if (mouse_check_button_pressed(mb_right) && sprite_index != sprPAttackPunch && c
     image_index = 0;
     image_speed = 1;
     
-    var punch = instance_create_layer(x + lengthdir_x(20, image_angle), y + lengthdir_y(20, image_angle), "Instances", obj_Punch);
-    punch.direction = image_angle;
-    punch.image_angle = punch.direction;
+    var punch = instance_create_layer(x + lengthdir_x(20, image_angle_), y + lengthdir_y(20, image_angle_), "Instances", obj_Punch);
+    punch.direction = image_angle_;
+    punch.image_angle_ = punch.direction;
     punch.owner = id;
     
 }
@@ -178,8 +181,8 @@ function melee_attack() {
         image_speed = 1;
         
         var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
-        punch.direction = image_angle;
-        punch.image_angle = punch.direction;
+        punch.direction = image_angle_;
+        punch.image_angle_ = punch.direction;
         punch.owner = id;
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
@@ -194,8 +197,8 @@ function melee_weapon_attack() {
         image_speed = 1;
         
         var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
-        swing.direction = image_angle;
-        swing.image_angle = swing.direction;
+        swing.direction = image_angle_
+        swing.image_angle_ = swing.direction;
         swing.owner = id;
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
@@ -210,8 +213,8 @@ if (mouse_check_button_pressed(mb_left)) {
         image_speed = 1;
         
         var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
-        swing.direction = image_angle;
-        swing.image_angle = swing.direction;
+        swing.direction = image_angle_;
+        swing.image_angle_ = swing.direction;
         swing.owner = id;
     }
 }

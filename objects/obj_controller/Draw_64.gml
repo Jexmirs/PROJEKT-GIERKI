@@ -32,21 +32,35 @@ if (!draw) {
     draw = true;
 }
 
-var _Width = 200;
-var _Height = 100;
-var margin_top = 5;
-var margin_left = 1270;
-
+var final_score = global.score;
+var current_score = 0;
+var animation_speed = 10;
+var _Width = 1000; 
+var _Height = 75;
+var margin_top = 15; 
+var margin_left = 1200;
+var text_color = make_color_rgb(204, 229, 255);
 var _xx = margin_left;
 var _yy = margin_top;
+var score_text = string(round(current_score)) + "pts";
 
-var color_start = make_color_rgb(204, 229, 255);
-var color_end = make_color_rgb(211, 243, 255);
 
-draw_set_color(c_red);
-draw_set_font(Font_Menue);
-draw_text_transformed(_xx + 15, _yy + 10 + 2, string(global.score) + "pts", 1, 1, 0);
+var background_text_color = make_color_rgb(150, 150, 150);
+var background_offset = 12;
 
-draw_set_font(Font_Menue);
-draw_set_color(color_start);
-draw_text_transformed(_xx + 15, _yy + 10, string(global.score) + "pts" , 1, 1, 0);
+
+if (current_score < final_score) {
+    current_score += animation_speed;
+    if (current_score > final_score) {
+        current_score = final_score;
+    }
+}
+
+draw_set_color(background_text_color);
+draw_set_font(Font_Score);
+draw_text_transformed(_xx + background_offset, _yy + background_offset, score_text, 1, 1, 0);
+
+draw_set_color(text_color);
+draw_set_font(Font_Score);
+draw_text_transformed(_xx + 5, _yy + 10, score_text, 1, 1, 0);
+

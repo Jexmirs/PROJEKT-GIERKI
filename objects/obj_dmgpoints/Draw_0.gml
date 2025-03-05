@@ -12,6 +12,7 @@ var yy = y + lengthdir_y(angle_Length, angle);
 var negativeAngle = angle - 180;
 var xx2 = x + lengthdir_x(reducedLength, negativeAngle);
 var yy2 = y + lengthdir_y(angle_Length, negativeAngle);
+draw_set_font(Font_Menue);
 
 
 draw_text_transformed_color(xx,yy,  text, 2, 2, 0, textColor_Shadow, textColor_Shadow, textColor_Shadow, textColor_Shadow, 1);

@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"sprEWalkUnarmedn",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":41,
-  "bbox_left":20,
-  "bbox_right":35,
+  "bbox_left":23,
+  "bbox_right":34,
   "bbox_top":18,
   "collisionKind":1,
   "collisionTolerance":0,

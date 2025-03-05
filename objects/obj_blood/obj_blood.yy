@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprBloodSplat",
-    "path":"sprites/sprBloodSplat/sprBloodSplat.yy",
+    "name":"sprBloodSplatSmall",
+    "path":"sprites/sprBloodSplatSmall/sprBloodSplatSmall.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,14 +1,16 @@
-if (collision_rectangle(x, y, x + sprite_width, y + sprite_height, obj_enemy, false, true)) {
-    var enemy = instance_place(x, y, obj_enemy); 
-    if (enemy != noone) {
-        instance_destroy(enemy);
-		instance_create_layer(x,y, "Instances", obj_enemy_dead);
-		global.score += 400;
+if (collision_point(x, y, obj_enemy, false, true)) {
+    with (other) {
+        instance_create_layer(x, y, "Instances", obj_enemy_dead);
+        instance_destroy();
+    }
 
-		var i;
-		for (i = 0; i < 10; i++) {
-        var blood_x = x + random_range(-20, 20);
-        var blood_y = y + random_range(-20, 20);
+    instance_create_layer(x, y, "Instances", obj_dmgpoints);
+    global.score += 400;
+
+    var i;
+    for (i = 0; i < 25; i++) {
+        var blood_x = x + random_range(-20, 25);
+        var blood_y = y + random_range(-20, 25);
         
         if (!place_free(blood_x, blood_y) || 
             collision_point(blood_x, blood_y, obj_Wall, false, true) ||
@@ -18,11 +20,10 @@ if (collision_rectangle(x, y, x + sprite_width, y + sprite_height, obj_enemy, fa
         }
         
         var blood = instance_create_layer(blood_x, blood_y, "Instances", obj_blood);
-        blood.image_index = irandom(7);
-        blood.image_scale = random_range(0.5, 3);
+        blood.image_index = irandom(6);
+        blood.image_scale = random_range(0.5, 10);
+		image_speed = 0;
     }
 
     instance_destroy();
 }
-
-    }

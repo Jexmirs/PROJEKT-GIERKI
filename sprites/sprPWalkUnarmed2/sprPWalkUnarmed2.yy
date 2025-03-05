@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"sprPWalkUnarmed2",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":27,
-  "bbox_left":6,
-  "bbox_right":21,
+  "bbox_left":8,
+  "bbox_right":20,
   "bbox_top":4,
   "collisionKind":1,
   "collisionTolerance":0,

@@ -3,6 +3,8 @@ v_speed = 0;
 walkSpeed = 2;
 acceleration = 0.5;
 deceleration = 0.2;
+image_angle_ = 0;
+walk_timer = 0;
 
 weapon_type = "none";
 current_weapon = "none";
