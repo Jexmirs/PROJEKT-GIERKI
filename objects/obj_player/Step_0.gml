@@ -156,19 +156,23 @@ if(mouse_check_button_released(mb_right)){
 	}
 }
 
-if (mouse_check_button_pressed(mb_right) && sprite_index != sprPAttackPunch && current_weapon = "none") {
+if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && current_weapon == "none") {
     sprite_index = sprPAttackPunch;
     image_index = 0;
     image_speed = 1;
-    
-    var punch = instance_create_layer(x + lengthdir_x(20, image_angle_), y + lengthdir_y(20, image_angle_), "Instances", obj_Punch);
-    punch.direction = image_angle_;
-    punch.image_angle_ = punch.direction;
+
+    var offset = 20;
+    var punch_x = x + lengthdir_x(offset, image_angle);
+    var punch_y = y + lengthdir_y(offset, image_angle);
+
+    var punch = instance_create_layer(punch_x, punch_y, "Instances", obj_Punch);
+    punch.direction = image_angle;
+    punch.image_angle = punch.direction;
     punch.owner = id;
-    
+    punch.depth = -10;
 }
 
-with (obj_Punch) {
+with (obj_Swing) {
     if (owner.sprite_index != sprPAttackPunch) {
         instance_destroy();
     }
@@ -178,12 +182,17 @@ function melee_attack() {
     if (sprite_index != sprPAttackBat) {
         sprite_index = sprPAttackBat;
         image_index = 0;
-        image_speed = 1;
-        
-        var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
-        punch.direction = image_angle_;
-        punch.image_angle_ = punch.direction;
-        punch.owner = id;
+        image_speed = 0.5;
+
+        var offset = 20;
+        var swing_x = x + lengthdir_x(offset, image_angle);
+        var swing_y = y + lengthdir_y(offset, image_angle);
+
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
+        swing.direction = image_angle;
+        swing.image_angle = swing.direction;
+        swing.owner = id;
+        swing.depth = -20;
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
         }
@@ -194,29 +203,45 @@ function melee_weapon_attack() {
     if (current_weapon == "bat") {
         sprite_index = sprPAttackBat;
         image_index = 0;
-        image_speed = 1;
-        
-        var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
-        swing.direction = image_angle_
-        swing.image_angle_ = swing.direction;
+        image_speed = 0.5;
+
+        var offset = 20;
+        var swing_x = x + lengthdir_x(offset, image_angle);
+        var swing_y = y + lengthdir_y(offset, image_angle);
+
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
+        swing.direction = image_angle;
+        swing.image_angle = swing.direction;
         swing.owner = id;
+        swing.depth = -20;
+
         if (obj_Player.sprite_index == sprPWalkUnarmed2) {
             obj_Player.sprite_index = sprPWalkBat;
         }
     }
+
 }
 
 if (mouse_check_button_pressed(mb_left)) {
     if (current_weapon == "bat") {
         sprite_index = sprPAttackBat;
         image_index = 0;
-        image_speed = 1;
+        image_speed = 0.5;
         
-        var swing = instance_create_layer(obj_Player.x , obj_Player.y, "Instances", obj_Punch);
-        swing.direction = image_angle_;
-        swing.image_angle_ = swing.direction;
+        var offset = 20;
+        var swing_x = x + lengthdir_x(offset, image_angle);
+        var swing_y = y + lengthdir_y(offset, image_angle);
+
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
+        swing.direction = image_angle;
+        swing.image_angle = swing.direction;
         swing.owner = id;
+        swing.depth = -20;
+
+        if (obj_Player.sprite_index == sprPWalkUnarmed2) {
+            obj_Player.sprite_index = sprPWalkBat;
     }
+}
 }
 
 if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBat) {

@@ -1,1 +1,0 @@
-audio_play_sound(Suicide, 1, true);

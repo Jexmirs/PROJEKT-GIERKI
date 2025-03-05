@@ -4,7 +4,8 @@
 var _xx = 5;
 var _yy = 650;
 
-if (current_weapon != "none") {
+
+if (current_weapon != "none" && current_weapon != "bat") {
     var color_start = make_color_rgb(204, 229, 255);
     var color_end = make_color_rgb(211, 243, 255);
 
@@ -19,11 +20,11 @@ if (current_weapon != "none") {
     draw_set_color(c_red);
 
     var text_width = string_width(text_1);
+    var text_x = _xx + 35 - (text_width * 1.5) / 2;
 
-    draw_text_transformed(_xx + 35, _yy + 0, text_1, 3, 3, 0);
-
+    draw_text_transformed(text_x + 25, _yy + 0, text_1, 3, 3, 0);
+    
     draw_set_color(color_start);
     draw_set_font(Font_Score);
-    draw_text_transformed(_xx + 35, _yy + 2, text_1, 3, 3, 0);
+    draw_text_transformed(text_x + 25, _yy + 2, text_1, 3, 3, 0);
 }
-

@@ -1,4 +1,3 @@
-
 target_x = obj_Player.x;
 target_y = obj_Player.y;
 

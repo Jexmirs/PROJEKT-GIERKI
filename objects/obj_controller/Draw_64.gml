@@ -18,7 +18,7 @@ if (global.show_clear_message) {
 
 if (global.show_restart_message) {
     var _x = 100;
-    var _y = room_height - 30; 
+    var _y = room_height - 75; 
 
     draw_text(_x, _y, "Press R to restart");
 }
