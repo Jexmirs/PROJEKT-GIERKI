@@ -12,12 +12,22 @@ var verticalSpeed   = down - up;
 var result_h = horizontalSpeed * (walkSpeed + 1);
 var result_v = verticalSpeed * (walkSpeed + 1);
 
-if (!place_meeting(x + result_h, y, obj_Wall)) {
+if (!place_meeting(x + result_h, y, obj_Wall )) {
     x += horizontalSpeed * walkSpeed;
 }
 
-if (!place_meeting(x, y + result_v, obj_Wall)) {
+if (!place_meeting(x, y + result_v, obj_Wall )) {
     y += verticalSpeed * walkSpeed;
+}
+
+if(instance_exists(obj_enemy_unconscious)) {
+	if (!place_meeting(x + result_h, y, obj_Wall )) {
+    x += (horizontalSpeed * walkSpeed) * 0;
+	}
+
+	if (!place_meeting(x, y + result_v, obj_Wall )) {
+    y += (verticalSpeed * walkSpeed) * 0;
+	}
 }
 
 if (keyboard_check_pressed(vk_left)) {
@@ -88,7 +98,6 @@ if (mouse_check_button(mb_left) && fire_timer == 0 && current_weapon != "none") 
 
 function shoot() {
     if (current_weapon == "none") {
-        show_debug_message("Brak broni - nie można strzelać.");
         return;
     }
     
@@ -98,7 +107,6 @@ function shoot() {
         case "pistol":
             if (ammo_pistol > 0) {
                 ammo_pistol--;
-                show_debug_message("Strzał z pistoletu! Pozostała amunicja: " + string(ammo_pistol));
                 bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                 bullet.direction = point_direction(x, y, mouse_x, mouse_y);
                 bullet.image_angle_ = bullet.direction;
@@ -110,7 +118,6 @@ function shoot() {
         case "shotgun":
             if (ammo_shotgun > 0) {
                 ammo_shotgun--;
-                show_debug_message("Strzał ze strzelby! Pozostała amunicja: " + string(ammo_shotgun));
                 for (var i = -10; i <= 10; i += 5) {
                     bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                     bullet.direction = point_direction(x, y, mouse_x, mouse_y) + i;
@@ -124,7 +131,6 @@ function shoot() {
         case "rifle":
             if (ammo_rifle > 0) {
                 ammo_rifle--;
-                show_debug_message("Strzał z karabinu! Pozostała amunicja: " + string(ammo_rifle));
                 bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                 bullet.direction = point_direction(x, y, mouse_x, mouse_y);
                 bullet.image_angle_ = bullet.direction;
@@ -162,7 +168,7 @@ if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && cu
     image_index = 0;
     image_speed = 1;
 
-    var offset = 20;
+    var offset = 5;
     var punch_x = x + lengthdir_x(offset, image_angle);
     var punch_y = y + lengthdir_y(offset, image_angle);
 
@@ -174,7 +180,7 @@ if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && cu
 	audio_play_sound(Swing1, 1, false);
 }
 
-with (obj_Swing) {
+with (obj_Swing_Enemy) {
     if (owner.sprite_index != sprPAttackPunch) {
         instance_destroy();
     }
@@ -186,11 +192,11 @@ function melee_attack() {
         image_index = 0;
         image_speed = 0.5;
 
-        var offset = 20;
+		var offset = 5;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
-        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing_Enemy);
         swing.direction = image_angle;
         swing.image_angle = swing.direction;
         swing.owner = id;
@@ -208,7 +214,7 @@ function melee_weapon_attack() {
         image_index = 0;
         image_speed = 0.5;
 
-        var offset = 20;
+		var offset = 5;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
@@ -231,11 +237,11 @@ if (mouse_check_button_pressed(mb_left)) {
         image_index = 0;
         image_speed = 0.3;
         
-        var offset = 20;
+		var offset = 5;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
-        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing_Enemy);
         swing.direction = image_angle;
         swing.image_angle = swing.direction;
         swing.owner = id;

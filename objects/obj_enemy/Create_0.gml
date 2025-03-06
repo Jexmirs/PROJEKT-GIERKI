@@ -12,8 +12,12 @@ alarm[0] = 1;
 
 function can_see_player() {
     var hit = collision_line(x, y, obj_Player.x, obj_Player.y, obj_Wall, false, true);
-    
     return (hit == noone);
 }
 
 path = path_add();
+
+see_player_shoot_delay = 0;
+shoot_delay = 120;
+shooted = false;
+delay = 0;
