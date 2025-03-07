@@ -1,1 +1,1 @@
-sprite_index = spr_uzi;
+sprite_index = sprM16;

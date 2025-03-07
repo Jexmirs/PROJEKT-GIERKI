@@ -153,7 +153,7 @@ if(mouse_check_button_released(mb_right)){
 	
 	switch(current_weapon) {
 		case "rifle":
-		throwWeapon.sprite_index = spr_uzi
+		throwWeapon.sprite_index = sprM16
 		break;
 		case "bat":
 		throwWeapon.sprite_index = sprBat
@@ -168,7 +168,7 @@ if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && cu
     image_index = 0;
     image_speed = 1;
 
-    var offset = 5;
+    var offset = 20;
     var punch_x = x + lengthdir_x(offset, image_angle);
     var punch_y = y + lengthdir_y(offset, image_angle);
 
@@ -180,7 +180,7 @@ if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && cu
 	audio_play_sound(Swing1, 1, false);
 }
 
-with (obj_Swing_Enemy) {
+with (obj_Swing) {
     if (owner.sprite_index != sprPAttackPunch) {
         instance_destroy();
     }
@@ -192,11 +192,11 @@ function melee_attack() {
         image_index = 0;
         image_speed = 0.5;
 
-		var offset = 5;
+		var offset = 20;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
-        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing_Enemy);
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
         swing.direction = image_angle;
         swing.image_angle = swing.direction;
         swing.owner = id;
@@ -214,7 +214,7 @@ function melee_weapon_attack() {
         image_index = 0;
         image_speed = 0.5;
 
-		var offset = 5;
+		var offset = 20;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
@@ -237,11 +237,11 @@ if (mouse_check_button_pressed(mb_left)) {
         image_index = 0;
         image_speed = 0.3;
         
-		var offset = 5;
+		var offset = 20;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
-        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing_Enemy);
+        var swing = instance_create_layer(swing_x, swing_y, "Instances", obj_Swing);
         swing.direction = image_angle;
         swing.image_angle = swing.direction;
         swing.owner = id;
