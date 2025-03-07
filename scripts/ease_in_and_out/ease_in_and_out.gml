@@ -1,13 +1,13 @@
 function ease_in_and_out() {
 
 
-	var t = argument[0];  // time
-	var b = argument[1];  // begin
-	var c = argument[2];  // change
-	var d = argument[3];  // duration
+	var t = argument[0];
+	var b = argument[1];
+	var c = argument[2];
+	var d = argument[3]; 
 
 
-	 t /= d/2;  // result 0 to 1
+	 t /= d/2;
  
 	  if (t < 1) {  return c/2 *t*t + b; }
 	 t--;

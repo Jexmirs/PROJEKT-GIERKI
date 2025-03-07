@@ -1,11 +1,8 @@
-
-// move up and rotate
 angle += angle_Add;
 y -= moveY;
 
 
 
-// color shift
 textColor_Hue += textColor_Hue_Add;
 
 textColor_Front  = make_color_hsv(textColor_Hue,   textColor_Front_Sat , textColor_Front_Lum   );
@@ -13,7 +10,6 @@ textColor_Shadow = make_color_hsv(textColor_Hue,   textColor_Shadow_Sat, textCol
 
 
 
-// state machine
 if ( state == "pop in"){
 text_Size += text_Size_Add;
  if(text_Size >= text_Size_Max ){ state = "idle";  }
@@ -30,7 +26,7 @@ if ( state == "pop out"){
 	
 	
 	
-#region not used -> wobble
+#region
 
 /*
 _channel_Timer += 1/_channel_Time;

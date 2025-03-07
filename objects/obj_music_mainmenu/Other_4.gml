@@ -1,0 +1,1 @@
+audio_play_sound(Crystals, 1, true);
