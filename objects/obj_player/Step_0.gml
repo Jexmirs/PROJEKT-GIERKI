@@ -275,3 +275,17 @@ with (obj_Punch) {
         instance_destroy();
     }
 }
+
+//Eventy związane z dialogami itd.
+
+var distance_to_event = distance_to_object(obj_dialogue_event);
+
+if (instance_exists(obj_dialogue_event)) {
+    if (distance_to_event < 5) {
+                    
+            instance_destroy(obj_dialogue_event);
+           
+            instance_create_layer(x, y, "Instances", obj_dialogue_assassin_01);
+	}
+
+}	

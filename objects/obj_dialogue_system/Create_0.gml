@@ -32,12 +32,11 @@ global.dialogues = [
 
 global.dialogue_index = 0;
 
-// Przełącznik czy można skipować
 global.can_skip = false;
 
-// Timer do opóźnienia tekstu (jeśli używasz pisania na ekranie)
-global.text_timer = 0;
-global.text_speed = 1; // Szybkość pisania (im wyższa wartość, tym wolniej)
 
-global.dialog_text = "";  // Tekst, który będzie wyświetlany
-global.full_dialog_text = global.dialogues[global.dialogue_index];  // Pełny tekst dialogu
+global.text_timer = 0;
+global.text_speed = 1; 
+
+global.dialog_text = "";
+global.full_dialog_text = global.dialogues[global.dialogue_index];

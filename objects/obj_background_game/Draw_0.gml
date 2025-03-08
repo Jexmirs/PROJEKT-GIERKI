@@ -14,3 +14,5 @@ color1 = make_color_hsv(hue, 120, 120);
 draw_rectangle_color(grabCamera_X - buffer_, grabCamera_Y - buffer_, 
                      grabCamera_Width + buffer_, grabCamera_Height + buffer_,
                      color1, color1, color2, color2, 0);
+
+draw_self();

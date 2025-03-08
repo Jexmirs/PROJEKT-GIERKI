@@ -53,7 +53,7 @@ switch(selected) {
 
 if(keyEnter) {
 	if(selected = 1) {
-		room_goto(Chapter1);
+		room_goto(Chapter1Dialogue);
 	if(selected = 4) {
 		game_end();	
 	}

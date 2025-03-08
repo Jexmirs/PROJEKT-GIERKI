@@ -1,4 +1,5 @@
 alarm[0] = 420;
+image_speed = 0;
 
 scaleUp = 0.02;
 speedUp = 0.02;
