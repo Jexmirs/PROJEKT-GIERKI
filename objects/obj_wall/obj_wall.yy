@@ -8,8 +8,8 @@
   "name":"obj_Wall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Obiekty",
-    "path":"folders/Obiekty.yy",
+    "name":"Game",
+    "path":"folders/Obiekty/Game.yy",
   },
   "parentObjectId":null,
   "persistent":false,
