@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_background_game",
+  "%Name":"obj_spawner_chapters_buildings",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_background_game",
+  "name":"obj_spawner_chapters_buildings",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game",
-    "path":"folders/Obiekty/Game.yy",
+    "name":"Chapters",
+    "path":"folders/Obiekty/Chapters.yy",
   },
   "parentObjectId":null,
   "persistent":false,

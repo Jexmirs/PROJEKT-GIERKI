@@ -2,7 +2,7 @@ global.time += 1;
 
 swing_offset = sin(global.time * swing_speed) * swing_amplitude;
 
-// Obsługuje przejście do następnego dialogu, gdy użytkownik naciśnie "Space" lub kliknie myszką
+
 if (global.can_skip && (keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left))) {
     global.dialogue_index += 1;
 
@@ -20,7 +20,6 @@ if (global.can_skip && (keyboard_check_pressed(vk_space) || mouse_check_button_p
     }
 }
 
-// Animacja pisania tekstu
 if (global.text_timer < string_length(global.full_dialog_text)) {
     global.text_timer += global.text_speed;
     global.dialog_text = string_copy(global.full_dialog_text, 1, global.text_timer);
