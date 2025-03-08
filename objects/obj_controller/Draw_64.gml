@@ -1,3 +1,8 @@
+var prev_font = draw_get_font();
+var r  = keyboard_check(ord("R"));
+
+score_text = string(current_score) + " pts";
+
 if (global.show_clear_message) {
     var alpha_value = clamp(global.clear_timer / 120, 0, 1);
     
@@ -14,53 +19,32 @@ if (global.show_clear_message) {
         global.show_clear_message = false;
         global.clear_timer = 0;
     }
+
+    draw_set_font(prev_font);
 }
 
-if (global.show_restart_message) {
-    var _x = 100;
-    var _y = room_height - 75; 
-
-    draw_text(_x, _y, "Press R to restart");
+if(!instance_exists(obj_Player)) {
+	draw_set_font(Font_Score);
+	draw_rectangle_color(_xx-1500, _yy+700, _xx-750, _yy+600, c_black, c_black, c_black, c_black, 0)
+	draw_text(_xx - 1000, _yy+650, "Press R to Restart")
+	if(r) {
+		room_restart();	
+	}
 }
 
-draw = false;
+prev_font = draw_get_font();
 
-if (!draw) {
-    if (!variable_global_exists("score")) {
-        global.score = 0;
-    }
-    draw = true;
-}
+/*draw_rectangle_color(_xx-100, _yy-5, _xx+300, _yy+80, c_black, c_black, c_black, c_black, 0)
 
-var final_score = global.score;
-var current_score = 0;
-var animation_speed = 10;
-var _Width = 1000; 
-var _Height = 75;
-var margin_top = 15; 
-var margin_left = 1200;
-var text_color = make_color_rgb(204, 229, 255);
-var _xx = margin_left;
-var _yy = margin_top;
-var score_text = string(round(current_score)) + "pts";
-
-
-var background_text_color = make_color_rgb(150, 150, 150);
-var background_offset = 12;
-
-
-if (current_score < final_score) {
-    current_score += animation_speed;
-    if (current_score > final_score) {
-        current_score = final_score;
-    }
-}
-
-draw_set_color(background_text_color);
 draw_set_font(Font_Score);
-draw_text_transformed(_xx + background_offset, _yy + background_offset, score_text, 1, 1, 0);
+draw_text_ext_transformed_color(_xx-85, _yy, score_text, 200,200, 1.5, 1.5, wiggle, color3,color3,color3,color3, 1 );
+draw_text_ext_transformed_color(_xx-85, _yy, score_text, 200,200, 1.5, 1.5, wiggle, color2,color2,color2,color2, 1 );
+draw_text_ext_transformed_color(_xx-85-2, _yy-2, score_text, 200,100, 1.5, 1.5, wiggle, color,color,color,color, blink );
 
-draw_set_color(text_color);
-draw_set_font(Font_Score);
-draw_text_transformed(_xx + 5, _yy + 10, score_text, 1, 1, 0);
+for (var i = 0; i < draw_Extra; i++ ) {
+draw_text_ext_transformed_color(_xx-85+i, _yy,    score_text, 200,200, 1.5, 1.5, wiggle, color3,color3,color3,color3, 1 );
+draw_text_ext_transformed_color(_xx-85+i, _yy,   score_text, 200,200, 1.5, 1.5, wiggle, color4,color4,color4,color4, 1 );
+draw_text_ext_transformed_color(_xx-85+2+i, _yy-2,  score_text, 200,100, 1.5, 1.5, wiggle, color,color,color,color, blink );
+} /*
 
+draw_set_font(prev_font);

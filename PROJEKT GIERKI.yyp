@@ -47,6 +47,7 @@
     {"id":{"name":"anicurve_Smooth","path":"animcurves/anicurve_Smooth/anicurve_Smooth.yy",},},
     {"id":{"name":"anicurve_Wobble","path":"animcurves/anicurve_Wobble/anicurve_Wobble.yy",},},
     {"id":{"name":"Font_Chapters","path":"fonts/Font_Chapters/Font_Chapters.yy",},},
+    {"id":{"name":"Font_CurrentScore","path":"fonts/Font_CurrentScore/Font_CurrentScore.yy",},},
     {"id":{"name":"Font_DmgPoints","path":"fonts/Font_DmgPoints/Font_DmgPoints.yy",},},
     {"id":{"name":"Font_Menue_Title","path":"fonts/Font_Menue_Title/Font_Menue_Title.yy",},},
     {"id":{"name":"Font_Menue","path":"fonts/Font_Menue/Font_Menue.yy",},},
