@@ -18,8 +18,8 @@
     {"$GMFolder":"","%Name":"Notatki","folderPath":"folders/Notatki.yy","name":"Notatki","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Obiekty","folderPath":"folders/Obiekty.yy","name":"Obiekty","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Chapters","folderPath":"folders/Obiekty/Chapters.yy","name":"Chapters","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Game","folderPath":"folders/Obiekty/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Dialogues","folderPath":"folders/Obiekty/Dialogues.yy","name":"Dialogues","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Game","folderPath":"folders/Obiekty/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"MainMenu","folderPath":"folders/Obiekty/MainMenu.yy","name":"MainMenu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Osie czasu","folderPath":"folders/Osie czasu.yy","name":"Osie czasu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -172,10 +172,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
+    {"roomId":{"name":"Chapter1","path":"rooms/Chapter1/Chapter1.yy",},},
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"roomId":{"name":"Chapter1Dialogue","path":"rooms/Chapter1Dialogue/Chapter1Dialogue.yy",},},
-    {"roomId":{"name":"Chapter1","path":"rooms/Chapter1/Chapter1.yy",},},
-    {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

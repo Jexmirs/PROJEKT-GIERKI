@@ -20,16 +20,6 @@ if (!place_meeting(x, y + result_v, obj_Wall )) {
     y += verticalSpeed * walkSpeed;
 }
 
-if(instance_exists(obj_enemy_unconscious)) {
-	if (!place_meeting(x + result_h, y, obj_Wall )) {
-    x += (horizontalSpeed * walkSpeed) * 0;
-	}
-
-	if (!place_meeting(x, y + result_v, obj_Wall )) {
-    y += (verticalSpeed * walkSpeed) * 0;
-	}
-}
-
 if (keyboard_check_pressed(vk_left)) {
     current_mask = (current_mask - 1 + array_length(masks)) mod array_length(masks);
 }
