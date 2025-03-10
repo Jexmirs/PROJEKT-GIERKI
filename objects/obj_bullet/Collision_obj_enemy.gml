@@ -3,7 +3,7 @@ if (collision_point(x, y, obj_enemy, false, true)) {
         instance_create_layer(x, y, "Instances", obj_enemy_dead);
         instance_destroy();
     }
-
+		instance_create_layer(x,y - 5, "Instances", obj_blood_pool);
     instance_create_layer(x, y, "Score_Points", obj_dmgpoints);
     global.score += 400;
 

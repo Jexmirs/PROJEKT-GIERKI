@@ -7,7 +7,7 @@ if (collision_point(x, y, obj_enemy, false, true)) {
 
     instance_create_layer(x, y, "Score_Points", obj_dmgpoints);
     global.score += 400;
-
+	instance_create_layer(x,y - 5, "Instances", obj_blood_pool);
     var i;
     for (i = 0; i < 35; i++) {
             var blood_angle = random(360);

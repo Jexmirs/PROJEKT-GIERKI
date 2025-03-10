@@ -18,8 +18,8 @@ var can_see_player = !collision_line(x, y, target_x, target_y, obj_Wall, false, 
                      !collision_line(x, y, target_x, target_y, obj_horizontaldoors, false, true);
 
 if (can_see_player) {
-    if (mp_grid_path(global.grid, path, x, y, target_x, target_y, false)) {
-        path_start(path, 1.5, path_action_stop, false);
+    if (mp_grid_path(global.grid, path, x, y, target_x, target_y, true)) {
+        path_start(path, 1.5, path_action_continue, false);
 		image_angle = lerp(image_angle, point_direction(x, y, target_x, target_y), 0.1);
 		image_speed = 1;
 		see_player_shoot_delay++;
@@ -40,4 +40,4 @@ if (can_see_player) {
     }
 }
 
-alarm[0] = 25;
+alarm[0] = 45;

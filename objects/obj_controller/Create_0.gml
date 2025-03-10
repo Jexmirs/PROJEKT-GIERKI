@@ -8,11 +8,7 @@ draw = false;
 
 background_text_color = make_color_rgb(150, 150, 150);
 text_color = make_color_rgb(204, 229, 255);
-c_score = 0;
-final_score = 0;
-current_score = 0;
-animation_speed = 100;
-final_score = c_score;
+global.current_score = 0;
 
 
 _Width = 1000;

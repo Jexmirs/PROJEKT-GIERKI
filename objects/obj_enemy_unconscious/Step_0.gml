@@ -25,7 +25,7 @@ if (place_meeting(x, y, obj_Player)) {
             var blood_angle = random_range(0, 15);
             var blood_speed = random_range(0.1, 3.5);
 
-            var blood = instance_create_layer(x, y, "Instances", obj_blood);
+            var blood = instance_create_layer(x, y, "Instances", obj_blood_splash);
             blood.image_index = irandom(7);
             blood.image_scale = random_range(0.5, 3);
             

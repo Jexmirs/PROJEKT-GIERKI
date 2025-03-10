@@ -42,9 +42,3 @@ else {
 	dest2 = tempStart2;
 	time2 = 0;
 	}
-	
-if (current_score < final_score) {
-    current_score += ceil((final_score - current_score) / animation_speed);
-}
-
-final_score = c_score;

@@ -1,7 +1,7 @@
 var prev_font = draw_get_font();
 var r  = keyboard_check(ord("R"));
 
-score_text = string(current_score) + " pts";
+score_text = string(global.current_score) + " pts";
 
 if (global.show_clear_message) {
     var alpha_value = clamp(global.clear_timer / 120, 0, 1);
@@ -34,17 +34,9 @@ if(!instance_exists(obj_Player)) {
 
 prev_font = draw_get_font();
 
-/*draw_rectangle_color(_xx-100, _yy-5, _xx+300, _yy+80, c_black, c_black, c_black, c_black, 0)
+draw_rectangle_color(_xx-100, _yy-5, _xx+300, _yy+80, c_black, c_black, c_black, c_black, 0)
 
 draw_set_font(Font_Score);
-draw_text_ext_transformed_color(_xx-85, _yy, score_text, 200,200, 1.5, 1.5, wiggle, color3,color3,color3,color3, 1 );
-draw_text_ext_transformed_color(_xx-85, _yy, score_text, 200,200, 1.5, 1.5, wiggle, color2,color2,color2,color2, 1 );
-draw_text_ext_transformed_color(_xx-85-2, _yy-2, score_text, 200,100, 1.5, 1.5, wiggle, color,color,color,color, blink );
-
-for (var i = 0; i < draw_Extra; i++ ) {
-draw_text_ext_transformed_color(_xx-85+i, _yy,    score_text, 200,200, 1.5, 1.5, wiggle, color3,color3,color3,color3, 1 );
-draw_text_ext_transformed_color(_xx-85+i, _yy,   score_text, 200,200, 1.5, 1.5, wiggle, color4,color4,color4,color4, 1 );
-draw_text_ext_transformed_color(_xx-85+2+i, _yy-2,  score_text, 200,100, 1.5, 1.5, wiggle, color,color,color,color, blink );
-} /*
+draw_text(1250, 40, score_text);
 
 draw_set_font(prev_font);
