@@ -11,3 +11,4 @@ patrol_points = [
 ];
 
 patrol_speed = 0.5;
+is_unconscious = false;

@@ -21,3 +21,5 @@ see_player_shoot_delay = 0;
 shoot_delay = 120;
 shooted = false;
 delay = 0;
+global.going_to_weapon = false;
+global.picked_weapon = false;

@@ -133,8 +133,7 @@ function shoot() {
 
 }
 
-
-if(mouse_check_button_released(mb_right)) && weapon_pickup_delay < 5{
+if(mouse_check_button_pressed(mb_right)) {
 	if(current_weapon != "none") {
 	var throwWeapon = instance_create_layer(x,y, "Instances", obj_Weapon_Throw);
 	throwWeapon.direction = point_direction(x, y, mouse_x, mouse_y);
@@ -278,4 +277,4 @@ if (instance_exists(obj_dialogue_event)) {
             instance_create_layer(x, y, "Instances", obj_dialogue_assassin_01);
 	}
 
-}	
+}

@@ -1,3 +1,37 @@
+global.stand_delay--;
+if(global.stand_delay < 0) {
+	sprite_index = 	sprEGetUp;
+	global.standed = true;
+	global.standed_delay--;
+}
+
+if(image_index > 6) {
+	image_speed = 0;	
+}
+
+if (global.standed == true && global.standed_delay < 0) {
+    var new_enemy = instance_create_layer(x, y, "Instances", obj_enemy);
+
+    if (instance_exists(new_enemy)) {
+        new_enemy.current_weapon = "none";
+        new_enemy.patrol_points = [
+            [392, 382],
+            [250, 373],
+            [250, 226],
+            [3, 233]
+        ];
+        new_enemy.is_unconscious = true;
+        new_enemy.idling = false;
+        new_enemy.patrolling = false;
+        new_enemy.target_pickup = noone;
+		new_enemy.idle = "standing";
+    }
+
+    instance_destroy();
+}
+
+
+
 if (place_meeting(x, y, obj_Player)) {
     if (keyboard_check(ord("E"))) {
         obj_Player.image_alpha = 0;
@@ -78,6 +112,6 @@ if (kicked_head == 3 && !blood_spawned_3) {
     }
 }
 
-if (obj_enemy_unconscious.image_speed > 0) {
+if (instance_exists(obj_enemy_unconscious) && obj_enemy_unconscious.image_speed > 0) {
     animation_delay++;
 }

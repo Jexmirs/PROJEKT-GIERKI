@@ -5,3 +5,8 @@ global.attacking = false;
 blood_spawned_1 = false;
 blood_spawned_2 = false;
 blood_spawned_3 = false;
+
+global.stand_delay = 360;
+global.standed = false;
+global.standed_delay = 120;
+is_unconscious = false;

@@ -1,7 +1,7 @@
 idle = "standing";
 patrolling = false;
 idling = true;
-current_weapon = "bat";
+enemy_current_weapon = "bat";
 
 patrol_points = [
     [534, 130],
@@ -11,3 +11,4 @@ patrol_points = [
 ];
 
 patrol_speed = 0.5;
+is_unconscious = false;

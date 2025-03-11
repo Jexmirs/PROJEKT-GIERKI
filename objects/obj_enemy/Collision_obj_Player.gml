@@ -1,4 +1,4 @@
-if (current_weapon == "bat") {
+if (enemy_current_weapon == "bat") {
     var radius = 20;
     if (point_distance(x, y, obj_Player.x, obj_Player.y) <= radius) {
         obj_enemy.sprite_index = sprEAttackBat;
@@ -15,9 +15,8 @@ if (current_weapon == "bat") {
             swing.image_angle = swing.direction;
             swing.owner = id;
             audio_play_sound(Swing1, 1, false);
-            instance_destroy(obj_Player);
-            instance_destroy(obj_Camera);
-            delay = 0;
         }
+		instance_destroy(obj_Player);
+		instance_destroy(obj_Camera);
     }
 }

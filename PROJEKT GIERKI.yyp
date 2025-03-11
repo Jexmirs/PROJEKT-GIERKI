@@ -144,6 +144,7 @@
     {"id":{"name":"sprEBackBashed","path":"sprites/sprEBackBashed/sprEBackBashed.yy",},},
     {"id":{"name":"sprEBackHeadbutt","path":"sprites/sprEBackHeadbutt/sprEBackHeadbutt.yy",},},
     {"id":{"name":"sprEBackKicked","path":"sprites/sprEBackKicked/sprEBackKicked.yy",},},
+    {"id":{"name":"sprEGetUp","path":"sprites/sprEGetUp/sprEGetUp.yy",},},
     {"id":{"name":"sprEIdlePee","path":"sprites/sprEIdlePee/sprEIdlePee.yy",},},
     {"id":{"name":"sprEIdleSmoke","path":"sprites/sprEIdleSmoke/sprEIdleSmoke.yy",},},
     {"id":{"name":"sprEStandGuard","path":"sprites/sprEStandGuard/sprEStandGuard.yy",},},
@@ -176,10 +177,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"roomId":{"name":"Chapter1Dialogue","path":"rooms/Chapter1Dialogue/Chapter1Dialogue.yy",},},
     {"roomId":{"name":"Chapter1","path":"rooms/Chapter1/Chapter1.yy",},},
-    {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

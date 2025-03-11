@@ -10,24 +10,28 @@ if (idling) {
         case "peeing":
             sprite_index = sprEIdlePee;
             image_speed = 1;
+			path_end();
             break;
         case "smoking":
             sprite_index = sprEIdleSmoke;
             image_speed = 1;
+			path_end();
             break;
         case "standing":
             sprite_index = sprEWalkUnarmedn;
             image_speed = 0;
+			path_end();
             break;
         case "guarding":
             sprite_index = sprEStandGuard;
             image_speed = 1;
+			path_end();
             break;
     }
 }
 
-if (can_see_player && !idling && see_player_shoot_delay > 2 && instance_exists(obj_Player)) {
-    switch (current_weapon) {
+if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player)) {
+    switch (enemy_current_weapon) {
         case "m16":
             if (shoot_delay <= 0) {
                 shooted = true;
