@@ -6,8 +6,10 @@ blood_spawned_1 = false;
 blood_spawned_2 = false;
 blood_spawned_3 = false;
 
-global.stand_delay = 30;
+global.stand_delay = 1000;
 global.standed = false;
 global.standed_delay = 120;
 is_unconscious = false;
 global.target_enemy = id;
+attacking = false;
+cant_spawn_enemy = false;
