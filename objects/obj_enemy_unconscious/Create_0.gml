@@ -12,4 +12,3 @@ global.standed_delay = 120;
 is_unconscious = false;
 global.target_enemy = id;
 attacking = false;
-cant_spawn_enemy = false;

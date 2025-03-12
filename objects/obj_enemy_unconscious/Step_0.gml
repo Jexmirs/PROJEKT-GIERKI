@@ -9,7 +9,7 @@ if (image_index > 6) {
     image_speed = 0;
 }
 
-if (global.standed == true && global.standed_delay < 0 && !attacking && !cant_spawn_enemy) {
+if (global.standed == true && global.standed_delay < 0 && !attacking) {
     var new_enemy = instance_create_layer(x, y, "Instances", obj_enemy);
 
     if (instance_exists(new_enemy)) {
@@ -33,13 +33,14 @@ if (global.standed == true && global.standed_delay < 0 && !attacking && !cant_sp
 if (place_meeting(x, y, obj_Player)) {
     var nearest_enemy = undefined;
     var nearest_distance = 999999;
-    with (obj_enemy) {
+    with (obj_enemy_unconscious) {
         var dist = point_distance(x, y, obj_Player.x, obj_Player.y);
         if (dist < nearest_distance) {
             nearest_enemy = id;
             nearest_distance = dist;
         }
     }
+
 
     if (nearest_enemy != undefined) {
         var enemy_instance = nearest_enemy;
@@ -52,7 +53,6 @@ if (place_meeting(x, y, obj_Player)) {
             animation_delay = 0;
             global.attacking = true;
 			attacking = true;
-			cant_spawn_enemy = true;
 
             if (instance_exists(enemy_instance)) {
                 var enemy = enemy_instance;

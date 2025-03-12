@@ -33,6 +33,7 @@
     {"name":"inst_335A75F1","path":"rooms/test/test.yy",},
     {"name":"inst_268BD390","path":"rooms/test/test.yy",},
     {"name":"inst_1D12B8AB","path":"rooms/test/test.yy",},
+    {"name":"inst_4780A329","path":"rooms/test/test.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -99,6 +100,7 @@
         {"$GMRInstance":"v1","%Name":"inst_335A75F1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_335A75F1","objectId":{"name":"obj_Camera","path":"objects/obj_Camera/obj_Camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":606.0,"y":427.0,},
         {"$GMRInstance":"v1","%Name":"inst_268BD390","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_268BD390","objectId":{"name":"obj_background_game","path":"objects/obj_background_game/obj_background_game.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":540.0,"y":430.0,},
         {"$GMRInstance":"v1","%Name":"inst_1D12B8AB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1D12B8AB","objectId":{"name":"obj_Pickup","path":"objects/obj_Pickup/obj_Pickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":421.0,"y":415.0,},
+        {"$GMRInstance":"v1","%Name":"inst_4780A329","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4780A329","objectId":{"name":"obj_Pickup","path":"objects/obj_Pickup/obj_Pickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":373.0,"y":415.0,},
       ],"layers":[],"name":"Instances_OnDown","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
   ],
   "name":"test",

@@ -1,14 +1,13 @@
 if (collision_point(x, y, obj_enemy, false, true)) {
     with (other) {
 		obj_enemy.is_unconscious = true;
-		obj_enemy.enemy_current_weapon = "none";
         instance_create_layer(x, y, "Instances", obj_enemy_dead);
         instance_destroy();
 		audio_play_sound(Punch, 1, false);
     }
     instance_create_layer(x, y, "Score_Points", obj_dmgpoints);
     global.score += 400;
-	instance_create_layer(x,y - 5, "Instances", obj_blood_pool);
+	instance_create_layer(obj_enemy_dead.x,obj_enemy_dead.y - 5, "Instances", obj_blood_pool);
     var i;
     for (i = 0; i < 35; i++) {
             var blood_angle = random(360);
