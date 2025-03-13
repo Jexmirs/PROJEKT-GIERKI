@@ -53,6 +53,7 @@
     {"id":{"name":"Font_DmgPoints","path":"fonts/Font_DmgPoints/Font_DmgPoints.yy",},},
     {"id":{"name":"Font_Menue_Title","path":"fonts/Font_Menue_Title/Font_Menue_Title.yy",},},
     {"id":{"name":"Font_Menue","path":"fonts/Font_Menue/Font_Menue.yy",},},
+    {"id":{"name":"Font_Restart","path":"fonts/Font_Restart/Font_Restart.yy",},},
     {"id":{"name":"Font_Score","path":"fonts/Font_Score/Font_Score.yy",},},
     {"id":{"name":"obj_Assassin","path":"objects/obj_Assassin/obj_Assassin.yy",},},
     {"id":{"name":"obj_background_game","path":"objects/obj_background_game/obj_background_game.yy",},},

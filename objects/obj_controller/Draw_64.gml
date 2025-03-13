@@ -23,20 +23,27 @@ if (global.show_clear_message) {
     draw_set_font(prev_font);
 }
 
+prev_font_restart = draw_get_font();
+
 if(!instance_exists(obj_Player)) {
-	draw_set_font(Font_Score);
+	draw_set_font(Font_Restart);
 	draw_rectangle_color(_xx-1500, _yy+700, _xx-750, _yy+600, c_black, c_black, c_black, c_black, 0)
-	draw_text(_xx - 1000, _yy+650, "Press R to Restart")
+	draw_text(_xx - 1100, _yy+625, "Press R to Restart")
 	if(r) {
 		room_restart();	
 	}
 }
 
+draw_set_font(prev_font_restart);
+
 prev_font = draw_get_font();
 
-draw_rectangle_color(_xx-100, _yy-5, _xx+300, _yy+80, c_black, c_black, c_black, c_black, 0)
-
+draw_set_color(c_fuchsia);
 draw_set_font(Font_Score);
-draw_text(1250, 40, score_text);
+draw_text(1150, 40, score_text);
+
+draw_set_color(c_aqua);
+draw_set_font(Font_Score);
+draw_text(1150-5, 40-5, score_text);
 
 draw_set_font(prev_font);
