@@ -95,14 +95,17 @@ function shoot() {
     
     switch (current_weapon) {
         case "pistol":
+		if (mouse_check_button_pressed(mb_left)) {
             if (ammo_pistol > 0) {
                 ammo_pistol--;
                 bullet = instance_create_layer(x, y, "Instances", obj_bullet);
                 bullet.direction = point_direction(x, y, mouse_x, mouse_y);
                 bullet.image_angle_ = bullet.direction;
                 bullet.speed = 10;
-                fire_rate = 15;
+                fire_rate = 1;
+				audio_play_sound(Pistol, 1, false);
             }
+		}
             break;
 
         case "shotgun":
@@ -113,6 +116,7 @@ function shoot() {
                     bullet.direction = point_direction(x, y, mouse_x, mouse_y) + i;
                     bullet.image_angle_ = bullet.direction;
                     bullet.speed = 8;
+					audio_play_sound(Shotgun, 1, false);
                 }
                 fire_rate = 30;
             }
@@ -126,7 +130,31 @@ function shoot() {
                 bullet.image_angle_ = bullet.direction;
                 bullet.speed = 12;
                 fire_rate = 5;
+				audio_play_sound(M16, 1, false);
+            }
+            break;
+	
+	        case "uzi":
+            if (ammo_uzi > 0) {
+                ammo_uzi--;
+                bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+                bullet.direction = point_direction(x, y, mouse_x, mouse_y);
+                bullet.image_angle_ = bullet.direction;
+                bullet.speed = 15;
+                fire_rate = 6;
 				audio_play_sound(Uzi, 1, false);
+            }
+            break;
+			
+			case "mp5":
+            if (ammo_mp5 > 0) {
+                ammo_mp5--;
+                bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+                bullet.direction = point_direction(x, y, mouse_x, mouse_y);
+                bullet.image_angle_ = bullet.direction;
+                bullet.speed = 14;
+                fire_rate = 5;
+				audio_play_sound(MP5, 1, false);
             }
             break;
     }
@@ -146,8 +174,18 @@ if(mouse_check_button_pressed(mb_right)) {
 		break;
 		case "bat":
 		throwWeapon.sprite_index = sprBat
+		break
+		case "shotgun":
+		throwWeapon.sprite_index = sprShotgun;
 		break;
-
+		case "mp5":
+		throwWeapon.sprite_index = sprMP5;
+		break;
+		case "pistol":
+		throwWeapon.sprite_index = sprPistol;
+		break;
+		case "uzi":
+		throwWeapon.sprite_index = sprUzi;
 		}
 	}
 }

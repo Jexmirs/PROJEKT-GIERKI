@@ -14,6 +14,8 @@ is_throwing = false;
 ammo_rifle =  30;
 ammo_pistol = 10;
 ammo_shotgun = 5;
+ammo_uzi = 40;
+ammo_mp5 = 25;
 
 has_melee = false;
 has_grenade = false;
