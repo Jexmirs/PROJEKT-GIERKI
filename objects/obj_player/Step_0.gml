@@ -186,6 +186,13 @@ if(mouse_check_button_pressed(mb_right)) {
 		break;
 		case "uzi":
 		throwWeapon.sprite_index = sprUzi;
+		break;
+		case "knife":
+		throwWeapon.sprite_index = sprKnife;
+		break;
+		case "axe":
+		throwWeapon.sprite_index = sprAxe;
+		break;
 		}
 	}
 }
@@ -210,6 +217,19 @@ if (mouse_check_button_pressed(mb_left) && sprite_index != sprPAttackPunch && cu
 with (obj_Swing) {
     if (owner.sprite_index != sprPAttackPunch) {
         instance_destroy();
+    }
+}
+
+if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBat || sprite_index == sprPAttackKnife || sprite_index == sprPAttackAxe) {
+    if (image_index >= image_number - 1) {
+        if (horizontalSpeed != 0 || verticalSpeed != 0) {
+            sprite_index = sprPWalkUnarmed2;
+        } else {
+            sprite_index = sprPWalkUnarmed2;
+        }
+        image_speed = 0;
+    } else {
+        image_speed = 1;
     }
 }
 
@@ -259,12 +279,23 @@ function melee_weapon_attack() {
 }
 
 if (mouse_check_button_pressed(mb_left)) {
-    if (current_weapon == "bat") {
-        sprite_index = sprPAttackBat;
+    if (current_weapon == "bat" || current_weapon == "knife" || current_weapon == "axe") {
+        switch (current_weapon) {
+            case "bat":
+                sprite_index = sprPAttackBat;
+                break;
+            case "knife":
+                sprite_index = sprPAttackKnife;
+                break;
+            case "axe":
+                sprite_index = sprPAttackAxe;
+                break;
+        }
+        
         image_index = 0;
         image_speed = 0.3;
-        
-		var offset = 20;
+
+        var offset = 20;
         var swing_x = x + lengthdir_x(offset, image_angle);
         var swing_y = y + lengthdir_y(offset, image_angle);
 
@@ -273,12 +304,21 @@ if (mouse_check_button_pressed(mb_left)) {
         swing.image_angle = swing.direction;
         swing.owner = id;
         swing.depth = -20;
-		audio_play_sound(Swing1, 1, false);
-        if (obj_Player.sprite_index == sprPWalkUnarmed2) {
-            obj_Player.sprite_index = sprPWalkBat;
+
+        switch (current_weapon) {
+            case "bat":
+                audio_play_sound(Swing1, 1, false);
+                break;
+            case "knife":
+                audio_play_sound(Swing1, 1, false);
+                break;
+            case "axe":
+                audio_play_sound(Swing1, 1, false);
+                break;
+        }
     }
 }
-}
+
 
 if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBat) {
     if (image_index >= image_number - 1) {
@@ -293,9 +333,14 @@ if (sprite_index == sprPAttackPunch || sprite_index == sprPAttackBat) {
     }
 }
 
-if(sprite_index == sprPWalkUnarmed2 && current_weapon = "bat") {
-	obj_Player.sprite_index = sprPWalkBat	
+if (sprite_index == sprPWalkUnarmed2 && current_weapon == "bat") {
+    obj_Player.sprite_index = sprPWalkBat;
+} else if (sprite_index == sprPWalkUnarmed2 && current_weapon == "knife") {
+    obj_Player.sprite_index = sprPWalkKnife;
+} else if (sprite_index == sprPWalkUnarmed2 && current_weapon == "axe") {
+    obj_Player.sprite_index = sprPWalkAxe;
 }
+
 
 with (obj_Punch) {
     if (owner.sprite_index != sprPAttackPunch && owner.sprite_index != sprPAttackBat) {

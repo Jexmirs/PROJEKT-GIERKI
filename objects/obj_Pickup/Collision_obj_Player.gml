@@ -33,6 +33,16 @@ if (player.current_weapon == "none") {
 				player.current_weapon = "pistol";
 				audio_play_sound(PickupWeapon, 1, false);
 			break;
+			case sprKnife:
+				player.sprite_index = sprPWalkKnife;
+				player.current_weapon = "knife";
+				audio_play_sound(PickupWeapon, 1, false);
+			break;
+			case sprAxe:
+				player.sprite_index = sprPWalkAxe;
+				player.current_weapon = "axe";
+				audio_play_sound(PickupWeapon, 1, false);
+			break;
         }
         instance_destroy();
     }

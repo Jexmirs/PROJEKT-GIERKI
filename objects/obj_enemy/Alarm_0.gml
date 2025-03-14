@@ -32,10 +32,12 @@ if (can_see_player && enemy_current_weapon != "none") {
                 case "m16":
                     sprite_index = sprEWalkM16;
                     image_angle = point_direction(x, y, target_x, target_y);
+					image_speed = 0;
                     break;
                 case "bat":
                     sprite_index = sprEWalkBat;
                     image_angle = point_direction(x, y, target_x, target_y);
+					image_speed = 0;
                     break;
             }
 		}

@@ -6,7 +6,7 @@ var _yy = 650;
 
 prev_font_ammo = draw_get_font();
 
-if (current_weapon != "none" && current_weapon != "bat") {
+if (current_weapon != "none" && current_weapon != "bat" && current_weapon != "knife" && current_weapon != "axe") {
     var color_start = make_color_rgb(204, 229, 255);
     var color_end = make_color_rgb(211, 243, 255);
 
