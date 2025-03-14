@@ -1,3 +1,4 @@
+	if(obj_enemy.enemy_current_weapon = "none") {
 	switch(sprite_index) {
             case sprM16:
                 obj_enemy.sprite_index = sprPWalkM16;
@@ -27,4 +28,4 @@
 				break;
         }
         instance_destroy();
-
+	}

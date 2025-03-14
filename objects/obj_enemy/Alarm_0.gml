@@ -19,9 +19,8 @@ var can_see_player = !collision_line(x, y, target_x, target_y, obj_Wall, false, 
 
 if (can_see_player && enemy_current_weapon != "none") {
     global.going_to_weapon = false;
-
     if (mp_grid_path(global.grid, path, x, y, target_x, target_y, true)) {
-        path_start(path, 1.5, path_action_continue, false);
+        path_start(path, 1.5, path_action_stop, false);
         image_angle = lerp(image_angle, point_direction(x, y, target_x, target_y), 0.1);
         image_speed = 1;
         see_player_shoot_delay++;
@@ -39,9 +38,32 @@ if (can_see_player && enemy_current_weapon != "none") {
                     image_angle = point_direction(x, y, target_x, target_y);
                     break;
             }
-        }
+		}
     }
 }
+
+var path_end_timer_max = 360;
+if (!variable_global_exists("path_end_timer")) {
+    global.path_end_timer = path_end_timer_max;
+}
+
+if (!can_see_player) {
+    global.path_end_timer--;
+    if (global.path_end_timer <= 0) {
+        path_end();
+        path_position = 0;
+        path_speed = 0;
+        hspeed = 0;
+        vspeed = 0;
+        speed = 0;
+        image_speed = 0;
+    }
+} else {
+    global.path_end_timer = path_end_timer_max;
+}
+
+
+
 	
 var nearest_pickup = instance_nearest(x, y, obj_Pickup);
 

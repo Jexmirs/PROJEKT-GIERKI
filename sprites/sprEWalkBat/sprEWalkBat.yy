@@ -30,7 +30,7 @@
   ],
   "name":"sprEWalkBat",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Game",
     "path":"folders/Sprites/Game.yy",
@@ -104,7 +104,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":12,
-    "yorigin":20,
+    "yorigin":10,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

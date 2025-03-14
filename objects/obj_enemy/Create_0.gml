@@ -23,3 +23,6 @@ shooted = false;
 delay = 0;
 global.going_to_weapon = false;
 global.picked_weapon = false;
+
+legs_image_index = 0;
+legs_image_speed = 1;
