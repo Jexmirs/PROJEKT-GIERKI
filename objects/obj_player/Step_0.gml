@@ -12,11 +12,11 @@ var verticalSpeed   = down - up;
 var result_h = horizontalSpeed * (walkSpeed + 1);
 var result_v = verticalSpeed * (walkSpeed + 1);
 
-if (!place_meeting(x + result_h, y, obj_Wall )) {
+if (!place_meeting(x + result_h, y, obj_Wall) && !place_meeting(x + result_h, y, obj_car)) {
     x += horizontalSpeed * walkSpeed;
 }
 
-if (!place_meeting(x, y + result_v, obj_Wall )) {
+if (!place_meeting(x, y + result_v, obj_Wall) && !place_meeting(x, y + result_v, obj_car)) {
     y += verticalSpeed * walkSpeed;
 }
 
@@ -360,4 +360,37 @@ if (instance_exists(obj_dialogue_event)) {
             instance_create_layer(x, y, "Instances", obj_dialogue_assassin_01);
 	}
 
+}
+
+//Samochód
+var distance_to_car = distance_to_object(obj_car);
+
+if (instance_exists(obj_car)) && global.floor_cleared {
+    if (distance_to_car < 5) {
+        obj_car.image_speed = 1;
+        obj_car.mask_index = sprCarMask;
+        
+        if (obj_car.image_index >= 2) {
+            obj_car.image_speed = 0;
+            obj_car.image_index = 2;
+        }
+    } else {
+        obj_car.mask_index = noone;
+
+        if (obj_car.image_index > 0) {
+            obj_car.image_speed = -0.5;
+        }
+		if(image_index = 1) {
+            obj_car.image_speed = 0;
+            obj_car.image_index = 0;
+		}
+        }
+    }
+
+var distance_to_finished_event = distance_to_object(obj_car_sitting);
+
+if (instance_exists(obj_car_sitting)) && global.floor_cleared {
+    if (distance_to_finished_event < 1) { 
+		room_goto_next();	
+	}
 }

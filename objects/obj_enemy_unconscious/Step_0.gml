@@ -152,6 +152,7 @@ if (place_meeting(x, y, obj_Player)) {
             blood.speed = blood_speed;
 
             blood.lifetime = random_range(0.1, 30);
+			instance_destroy();
         }
     }
 }

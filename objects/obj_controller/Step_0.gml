@@ -1,4 +1,4 @@
-if (instance_number(obj_enemy) == 0 && !global.floor_cleared) {
+if (instance_number(obj_enemy) == 0 && !global.floor_cleared && instance_number(obj_enemy_unconscious) == 0) {
     if (instance_exists(obj_Player)) {
         global.show_clear_message = true;
         global.clear_timer = 120;
