@@ -1,8 +1,7 @@
-canTouchThis = true;  // enable/disble player interaction
+canTouchThis = true;
 
-doorSpeedStart = 7;   // set once by player
-doorSpeed      = 0;   // current swing speed of door
+doorSpeedStart = 7;
+doorSpeed      = 0; 
 
 
-// swap to actual sprite
-sprite_index = spr_Door__Horizontal_Draw;
+sprite_index = doors;

@@ -35,42 +35,45 @@ if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player))
         case "m16":
             if (shoot_delay <= 0) {
                 shooted = true;
-                shoot_delay = 10;
+                shoot_delay = 8;
 
                 var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
                 bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
                 bullet.image_angle = bullet.direction;
                 bullet.speed = 10;
-				audio_play_sound(M16, 1, false);
+                audio_play_sound(M16, 1, false);
             }
-			break;
-			case "shotgun":
+            break;
+
+        case "shotgun":
             if (shoot_delay <= 0) {
                 shooted = true;
                 shoot_delay = 10;
 
                 for (var i = -10; i <= 10; i += 5) {
-				var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
-                    bullet.direction = point_direction(x, y, mouse_x, mouse_y) + i;
-                    bullet.image_angle_ = bullet.direction;
+                    var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
+                    bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y) + i;
+                    bullet.image_angle = bullet.direction;
                     bullet.speed = 8;
-					audio_play_sound(Shotgun, 1, false);
+                    audio_play_sound(Shotgun, 1, false);
                 }
-			break;
-			}
-			case "uzi":
-            if (shoot_delay <= 0) {
-                shooted = true;
-                shoot_delay = 10;
-
-                var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
-                bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
-                bullet.image_angle = bullet.direction;
-                bullet.speed = 18;
-				audio_play_sound(Uzi, 1, false);
             }
             break;
-			case "pistol":
+
+        case "uzi":
+            if (shoot_delay <= 0) {
+                shooted = true;
+                shoot_delay = 4;
+
+                var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
+                bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y) + random_range(-5, 5);
+                bullet.image_angle = bullet.direction;
+                bullet.speed = 18;
+                audio_play_sound(Uzi, 1, false);
+            }
+            break;
+
+        case "pistol":
             if (shoot_delay <= 0) {
                 shooted = true;
                 shoot_delay = 10;
@@ -79,19 +82,20 @@ if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player))
                 bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
                 bullet.image_angle = bullet.direction;
                 bullet.speed = 8;
-				audio_play_sound(Pistol, 1, false);
+                audio_play_sound(Pistol, 1, false);
             }
             break;
-			case "mp5":
+
+        case "mp5":
             if (shoot_delay <= 0) {
                 shooted = true;
-                shoot_delay = 10;
+                shoot_delay = 5;
 
                 var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
-                bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
+                bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y) + random_range(-3, 3);
                 bullet.image_angle = bullet.direction;
                 bullet.speed = 14;
-				audio_play_sound(MP5, 1, false);
+                audio_play_sound(MP5, 1, false);
             }
             break;
     }

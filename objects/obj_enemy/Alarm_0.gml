@@ -39,6 +39,22 @@ if (can_see_player && enemy_current_weapon != "none") {
                     image_angle = point_direction(x, y, target_x, target_y);
 					image_speed = 0;
                     break;
+				case "uzi":
+					sprite_index = sprPWalkUzi;
+					image_angle = point_direction(x, y, target_x, target_y);
+					break;
+				case "mp5":
+					sprite_index = sprPWalkMP5;
+					image_angle = point_direction(x, y, target_x, target_y);
+					break;
+				case "knife":
+					sprite_index = sprPWalkKnife;
+					image_angle = point_direction(x, y, target_x, target_y);
+					break;
+				case "axe":
+					sprite_index = sprPWalkAxe;
+					image_angle = point_direction(x, y, target_x, target_y);
+					break;
             }
 		}
     }

@@ -6,7 +6,22 @@
  		case "bat":
  		pickup.sprite_index = sprBat;
  		break;
+		case "knife":
+ 		pickup.sprite_index = sprKnife;
+ 		break;
+		case "axe":
+ 		pickup.sprite_index = sprAxe;
+ 		break;
+		case "uzi":
+ 		pickup.sprite_index = sprUzi;
+ 		break;
+		case "mp5":
+ 		pickup.sprite_index = sprMP5;
+ 		break;
+		case "shotgun":
+ 		pickup.sprite_index = sprShotgun;
+ 		break;
  	}
  	instance_destroy();
 	
-obj_enemy.enemy_current_weapon = "none";
+enemy_current_weapon = "none";

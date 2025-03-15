@@ -24,7 +24,7 @@ if (enemy_current_weapon == "bat") {
 if (enemy_current_weapon == "axe") {
     var radius = 20;
     if (point_distance(x, y, obj_Player.x, obj_Player.y) <= radius) {
-        obj_enemy.sprite_index = sprEAttackBat;
+        obj_enemy.sprite_index = sprPAttackAxe;
         image_speed = 0.5;
 		delay++
 
@@ -47,7 +47,7 @@ if (enemy_current_weapon == "axe") {
 if (enemy_current_weapon == "knife") {
     var radius = 20;
     if (point_distance(x, y, obj_Player.x, obj_Player.y) <= radius) {
-        obj_enemy.sprite_index = sprEAttackBat;
+        obj_enemy.sprite_index = sprPAttackKnife;
         image_speed = 0.5;
 		delay++
 
