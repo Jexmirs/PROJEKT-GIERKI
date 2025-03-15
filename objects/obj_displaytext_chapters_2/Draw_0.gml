@@ -3,7 +3,7 @@ var scale = 6;
 var posY_Selected = 1;
 var spacing = 60;
 var text_width = string_width(text_1) + (string_length(text_1) - 1) * spacing;
-var start_x = (grabCamera_Width - text_width) + camera_get_view_x(view_camera[0]) + 450;
+var start_x = (grabCamera_Width - text_width) + camera_get_view_x(view_camera[0]) + 175;
 var start_y = grabCamera_Height + camera_get_view_y(view_camera[0]) - 200;
 
 var x_offset = start_x;

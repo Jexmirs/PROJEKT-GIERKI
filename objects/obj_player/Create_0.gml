@@ -27,3 +27,4 @@ current_mask = 0;
 mask = 0;
 
 weapon_pickup_delay = 15;
+stairs_delay = 10;
