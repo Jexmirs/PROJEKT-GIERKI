@@ -20,6 +20,7 @@ var can_see_player = !collision_line(x, y, target_x, target_y, obj_Wall, false, 
 if (can_see_player && enemy_current_weapon != "none") {
     global.going_to_weapon = false;
     if (mp_grid_path(global.grid, path, x, y, target_x, target_y, true)) {
+		path_end();
         path_start(path, 1.5, path_action_stop, false);
         image_angle = lerp(image_angle, point_direction(x, y, target_x, target_y), 0.1);
         image_speed = 1;
@@ -42,18 +43,22 @@ if (can_see_player && enemy_current_weapon != "none") {
 				case "uzi":
 					sprite_index = sprPWalkUzi;
 					image_angle = point_direction(x, y, target_x, target_y);
+					image_speed = 0;
 					break;
 				case "mp5":
 					sprite_index = sprPWalkMP5;
 					image_angle = point_direction(x, y, target_x, target_y);
+					image_speed = 0;
 					break;
 				case "knife":
 					sprite_index = sprPWalkKnife;
 					image_angle = point_direction(x, y, target_x, target_y);
+					image_speed = 0;
 					break;
 				case "axe":
 					sprite_index = sprPWalkAxe;
 					image_angle = point_direction(x, y, target_x, target_y);
+					image_speed = 0;
 					break;
             }
 		}
@@ -92,6 +97,7 @@ if (variable_instance_exists(self, "is_unconscious") && is_unconscious) {
 
         if (global.picked_weapon == false && nearest_pickup != undefined) {
 			if (mp_grid_path(global.grid, path, x, y, nearest_pickup.x, nearest_pickup.y, true)) {
+			path_end();
 			path_start(path, 1.5, path_action_stop, false);
 			image_angle = point_direction(x, y, nearest_pickup.x, nearest_pickup.y)
         }	

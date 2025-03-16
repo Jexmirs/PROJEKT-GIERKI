@@ -50,12 +50,3 @@ switch(selected) {
  case 3: selected = 2; break;
  case 4: selected = 3; break;
 }}
-
-if(keyEnter) {
-	if(selected = 1) {
-		room_goto(test);
-	if(selected = 4) {
-		game_end();	
-	}
-	}
-}

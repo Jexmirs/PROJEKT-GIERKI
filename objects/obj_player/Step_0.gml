@@ -399,6 +399,6 @@ var distance_to_stairs = distance_to_object(obj_stairs);
 
 if (instance_exists(obj_stairs)) && global.floor_cleared {
     if (distance_to_stairs < 1) { 
-		room_goto(Level1Second);	
+		room_goto_next();	
 	}
 }
