@@ -53,7 +53,7 @@ switch(selected) {
 
 if(keyEnter) {
 	if(selected = 1) {
-		room_goto_next();
+		room_goto(Level1First);
 	if(selected = 4) {
 		game_end();	
 	}
