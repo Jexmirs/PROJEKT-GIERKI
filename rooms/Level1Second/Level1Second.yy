@@ -45,6 +45,7 @@
     {"name":"inst_15CA4817","path":"rooms/Level1Second/Level1Second.yy",},
     {"name":"inst_527BA6FB","path":"rooms/Level1Second/Level1Second.yy",},
     {"name":"inst_6FD0ECB6","path":"rooms/Level1Second/Level1Second.yy",},
+    {"name":"inst_5AFB8851","path":"rooms/Level1Second/Level1Second.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -84,6 +85,7 @@
         {"$GMRInstance":"v1","%Name":"inst_353D09B7","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_353D09B7","objectId":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-57.81268,"scaleX":1.0,"scaleY":1.0,"x":455.36826,"y":190.17311,},
         {"$GMRInstance":"v1","%Name":"inst_15CA4817","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15CA4817","objectId":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-151.62524,"scaleX":1.0,"scaleY":1.0,"x":577.0,"y":202.99214,},
         {"$GMRInstance":"v1","%Name":"inst_527BA6FB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_527BA6FB","objectId":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-188.64532,"scaleX":1.0,"scaleY":1.0,"x":584.0,"y":323.83136,},
+        {"$GMRInstance":"v1","%Name":"inst_5AFB8851","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5AFB8851","objectId":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":175.0,"y":366.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Car","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Car","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Doors","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
