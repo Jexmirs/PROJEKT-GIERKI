@@ -12,11 +12,11 @@ var verticalSpeed   = down - up;
 var result_h = horizontalSpeed * (walkSpeed + 1);
 var result_v = verticalSpeed * (walkSpeed + 1);
 
-if (!place_meeting(x + result_h, y, obj_Wall) && !place_meeting(x + result_h, y, obj_car)) {
+if (!place_meeting(x + result_h, y, obj_Wall) && !place_meeting(x + result_h, y, obj_car)) && !global.attacking {
     x += horizontalSpeed * walkSpeed;
 }
 
-if (!place_meeting(x, y + result_v, obj_Wall) && !place_meeting(x, y + result_v, obj_car)) {
+if (!place_meeting(x, y + result_v, obj_Wall) && !place_meeting(x, y + result_v, obj_car)) && !global.attacking {
     y += verticalSpeed * walkSpeed;
 }
 

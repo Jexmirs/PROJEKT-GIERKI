@@ -9,10 +9,14 @@ if (instance_exists(obj_Player)) {
 
 image_speed = 0;
 
-if (!variable_global_exists("grid")) {
-    global.grid = mp_grid_create(0, 0, room_width / 8, room_height / 8, 8, 8);
-    mp_grid_add_instances(global.grid, obj_Wall, false);
+if (variable_global_exists("grid")) {
+    mp_grid_destroy(global.grid);
 }
+
+global.grid = mp_grid_create(0, 0, room_width / 8, room_height / 8, 8, 8);
+mp_grid_add_instances(global.grid, obj_Wall, false);
+
+
 var can_see_player = !collision_line(x, y, target_x, target_y, obj_Wall, false, true) &&
                      !collision_line(x, y, target_x, target_y, obj_verticaldoors, false, true) &&
                      !collision_line(x, y, target_x, target_y, obj_horizontaldoors, false, true);
@@ -61,6 +65,8 @@ if (can_see_player && enemy_current_weapon != "none") {
 					image_speed = 0;
 					break;
             }
+		} else {
+			path_end();
 		}
     }
 }

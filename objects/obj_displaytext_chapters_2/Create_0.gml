@@ -5,7 +5,6 @@ delay = 0;
 
 grabCamera_Width  = camera_get_view_width(view_camera[0])/2;
 grabCamera_Height = camera_get_view_height(view_camera[0])/2;
-persistent = true;
 
 color = c_white;
 color2 = c_aqua;

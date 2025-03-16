@@ -1,7 +1,7 @@
-idle = "standing";
+idle = "guarding";
 patrolling = false;
 idling = true;
-enemy_current_weapon = "mp5";
+enemy_current_weapon = "uzi";
 
 patrol_points = [
     [534, 130],

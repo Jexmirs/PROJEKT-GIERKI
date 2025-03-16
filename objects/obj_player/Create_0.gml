@@ -28,3 +28,4 @@ mask = 0;
 
 weapon_pickup_delay = 15;
 stairs_delay = 10;
+global.attacking = false;

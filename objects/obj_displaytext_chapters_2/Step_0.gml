@@ -28,5 +28,5 @@ else {
 	
 
 if(delay > 5115) {
-	room_goto_next();	
+	room_goto(Level2First);	
 }
