@@ -23,7 +23,7 @@
   ],
   "name":"doors",
   "nineSlice":null,
-  "origin":3,
+  "origin":5,
   "parent":{
     "name":"Game",
     "path":"folders/Sprites/Game.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":32,
     "yorigin":2,
   },
   "swatchColours":null,

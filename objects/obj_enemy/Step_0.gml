@@ -30,12 +30,12 @@ if (idling) {
     }
 }
 
-if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player)) {
+if (can_see_player && see_player_shoot_delay > 1 && instance_exists(obj_Player)) {
     switch (enemy_current_weapon) {
         case "m16":
             if (shoot_delay <= 0) {
                 shooted = true;
-                shoot_delay = 8;
+                shoot_delay = 30;
 
                 var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
                 bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
@@ -63,7 +63,7 @@ if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player))
         case "uzi":
             if (shoot_delay <= 0) {
                 shooted = true;
-                shoot_delay = 4;
+                shoot_delay = 20;
 
                 var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
                 bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y) + random_range(-5, 5);
@@ -76,7 +76,7 @@ if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player))
         case "pistol":
             if (shoot_delay <= 0) {
                 shooted = true;
-                shoot_delay = 10;
+                shoot_delay = 30;
 
                 var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
                 bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
@@ -89,7 +89,7 @@ if (can_see_player && see_player_shoot_delay > 2 && instance_exists(obj_Player))
         case "mp5":
             if (shoot_delay <= 0) {
                 shooted = true;
-                shoot_delay = 5;
+                shoot_delay = 30;
 
                 var bullet = instance_create_layer(x, y, "Instances", obj_bullet_enemy);
                 bullet.direction = point_direction(x, y, obj_Player.x, obj_Player.y) + random_range(-3, 3);

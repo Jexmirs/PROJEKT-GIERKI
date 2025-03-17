@@ -1,6 +1,7 @@
 instance_create_layer(x, y, "Instances", obj_enemy_dead);
 instance_destroy(obj_Player);
 instance_destroy(obj_Camera);
+instance_destroy(obj_TargetDummy);
 
 instance_destroy();
 

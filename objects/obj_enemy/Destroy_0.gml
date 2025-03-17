@@ -21,6 +21,9 @@
 		case "shotgun":
  		pickup.sprite_index = sprShotgun;
  		break;
+		case "none":
+		pickup.sprite_index = spr_Nothing;
+		break;
  	}
  	instance_destroy();
 	

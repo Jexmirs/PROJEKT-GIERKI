@@ -18,6 +18,7 @@ if (enemy_current_weapon == "bat") {
         }
 		instance_destroy(obj_Player);
 		instance_destroy(obj_Camera);
+		instance_destroy(obj_TargetDummy);
     }
 }
 
@@ -41,6 +42,7 @@ if (enemy_current_weapon == "axe") {
         }
 		instance_destroy(obj_Player);
 		instance_destroy(obj_Camera);
+		instance_destroy(obj_TargetDummy);
     }
 }
 
@@ -64,5 +66,6 @@ if (enemy_current_weapon == "knife") {
         }
 		instance_destroy(obj_Player);
 		instance_destroy(obj_Camera);
+		instance_destroy(obj_TargetDummy);
     }
 }
